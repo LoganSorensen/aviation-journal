@@ -19,8 +19,6 @@ const Header = () => {
     setToggleNav(!toggleNav);
   };
 
-  console.log(toggleNav);
-
   return (
     <div className="header">
       <div className="hamburger-and-logo">
@@ -28,7 +26,7 @@ const Header = () => {
         {/* <p>Logo</p> */}
       </div>
       <form onSubmit={searchArticles}>
-      <i class="fas fa-search"></i>
+      <i className="fas fa-search"></i>
         <input
           type="text"
           placeholder="Search Articles"
