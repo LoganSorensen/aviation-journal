@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [search, setSearch] = useState("");
+  const [toggleNav, setToggleNav] = useState(false);
 
   const searchArticles = (e) => {
     e.preventDefault();
@@ -13,18 +15,35 @@ const Header = () => {
     setSearch(e.target.value);
   };
 
+  const toggleOpen = () => {
+    setToggleNav(!toggleNav);
+  };
+
+  console.log(toggleNav);
+
   return (
     <div className="header">
       <div className="hamburger-and-logo">
-        <i className="fas fa-bars"></i>
-        <p>Logo</p>
+        <i className="fas fa-bars" onClick={toggleOpen}></i>
+        {/* <p>Logo</p> */}
       </div>
       <form onSubmit={searchArticles}>
-        <input type="text" placeholder="Search Articles" onChange={handleChange} />
+      <i class="fas fa-search"></i>
+        <input
+          type="text"
+          placeholder="Search Articles"
+          onChange={handleChange}
+        />
       </form>
-      <div>
-      <i className="far fa-envelope"></i>
+      <div className='admin-features'>
+        <i className="far fa-envelope"></i>
         <button>Add Article</button>
+      </div>
+      <div className={`navigation ${toggleNav ? "open" : ""}`}>
+        <nav>
+          <Link to="/">Categories</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
       </div>
     </div>
   );

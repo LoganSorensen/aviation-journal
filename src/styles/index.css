@@ -137,9 +137,68 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #eeeeee;
 }
 .header .hamburger-and-logo {
   display: flex;
+  align-items: center;
+  margin-left: 1%;
+}
+.header i {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.header .navigation {
+  position: fixed;
+  background-color: #eeeeee;
+  width: 15%;
+  height: 100vh;
+  top: 5vh;
+  left: -15%;
+  transition: all 0.4s ease 0s;
+  z-index: 2;
+}
+.header .navigation nav {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5%;
+}
+.header .navigation nav a {
+  text-decoration: none;
+  font-size: 3rem;
+  color: #212121;
+  cursor: pointer;
+}
+.header .open {
+  left: 0;
+}
+.header form {
+  width: 40%;
+  display: flex;
+  border-bottom: 1px solid #eeeeee;
+  padding: 0.2% 0;
+}
+.header form i {
+  font-size: 1.8rem;
+}
+.header form input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  margin-left: 1%;
+  background-color: transparent;
+  outline: none;
+  color: #eeeeee;
+  font-size: 1.5rem;
+  transition: 0.4s ease;
+}
+.header form input:focus::placeholder {
+  color: transparent;
+}
+.header .admin-features {
+  display: flex;
+  align-items: center;
 }
 .login {
   margin: 7% auto 0;

@@ -1,10 +1,81 @@
 .header {
-    height: 5vh;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: @light;
+
+  .hamburger-and-logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin-left: 1%;
+  }
 
-    .hamburger-and-logo {
-        display: flex;
+  i {
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  .navigation {
+    position: fixed;
+    background-color: @light;
+    width: 15%;
+    height: 100vh;
+    top: 5vh;
+    left: -15%;
+    transition: all 0.4s ease 0s;
+    z-index: 2;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 5%;
+
+      a {
+        text-decoration: none;
+        font-size: 3rem;
+        color: @dark;
+        cursor: pointer;
+      }
     }
+  }
+
+  .open {
+    left: 0;
+  }
+
+  form {
+      width: 40%;
+      display: flex;
+      border-bottom: 1px solid @light;
+      padding: 0.2% 0;
+
+      i {
+          font-size: 1.8rem;
+      }
+
+      input{
+          width: 100%;
+          border-radius: 5px;
+          border: none;
+          margin-left: 1%;
+          background-color: transparent;
+          outline: none;
+          color: @light;
+          font-size: 1.5rem;
+          transition: 0.4s ease;
+
+          &:focus::placeholder {
+              color: transparent;
+          }
+        }
+        
+        
+  }
+
+  .admin-features {
+      display: flex;
+      align-items: center;
+  }
 }
