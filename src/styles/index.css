@@ -87,7 +87,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -126,6 +125,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  background-color: #212121;
+}
 .header {
   height: 5vh;
   display: flex;
@@ -134,4 +140,59 @@ table {
 }
 .header .hamburger-and-logo {
   display: flex;
+}
+.login {
+  margin: 7% auto 0;
+  width: 30%;
+  height: 50vh;
+  background-color: #eeeeee;
+  padding: 5% 0;
+  border-radius: 5px;
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+}
+.login form .input-cont {
+  border-bottom: 2px solid black;
+  margin: 7% 0;
+  display: flex;
+  align-items: center;
+}
+.login form .input-cont input {
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  padding: 1%;
+  outline: none;
+  background-color: transparent;
+}
+.login form .input-cont i {
+  margin-right: 2%;
+}
+.login form .remember {
+  display: flex;
+  align-items: center;
+}
+.login form .remember input {
+  margin-left: 0;
+}
+.login form .remember label {
+  font-size: 1.5rem;
+}
+.login form .remember input,
+.login form .remember label {
+  cursor: pointer;
+}
+.login form button {
+  border: none;
+  border-radius: 5px;
+  padding: 2%;
+  font-size: 2rem;
+  background-color: #0075ff;
+  color: white;
 }
