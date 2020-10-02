@@ -1,0 +1,53 @@
+.article-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 5% auto 0;
+  background-color: @light;
+  padding: 2%;
+
+  input,
+  textarea {
+    margin: 2% 0;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 1%;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .input-group {
+    button {
+      width: 15%;
+      padding: 1%;
+      border-radius: 0 5px 5px 0;
+      border: 1px solid gray;
+      cursor: pointer;
+    }
+
+    input {
+      border-radius: 5px 0 0 5px;
+      border-right: 0;
+    }
+  }
+
+  .tag, .source {
+      display: flex;
+      align-items: center;
+      margin: 1% 0;
+      font-size: 1.3rem;
+  }
+
+  .create-btn {
+      width: 30%;
+      margin: 0 auto;
+      color: @light;
+      background-color: @blue;
+      border: none;
+      border-radius: 5px;
+      padding: 2%;
+      font-size: 2rem;
+  }
+}

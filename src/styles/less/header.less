@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: space-between;
   color: @light;
+  background-color: @dark;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
 
   .hamburger-and-logo {
     display: flex;
@@ -13,7 +18,11 @@
 
   i {
     font-size: 3rem;
-    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: @light;
   }
 
   .navigation {
@@ -33,7 +42,6 @@
       margin-top: 5%;
 
       a {
-        text-decoration: none;
         font-size: 3rem;
         color: @dark;
         cursor: pointer;
@@ -46,36 +54,44 @@
   }
 
   form {
-      width: 40%;
-      display: flex;
-      border-bottom: 1px solid @light;
-      padding: 0.2% 0;
+    width: 40%;
+    display: flex;
+    border-bottom: 1px solid @light;
+    padding: 0.2% 0;
 
-      i {
-          font-size: 1.8rem;
+    i {
+      font-size: 1.8rem;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      margin-left: 1%;
+      background-color: transparent;
+      outline: none;
+      color: @light;
+      font-size: 1.5rem;
+      transition: 0.4s ease;
+
+      &:focus::placeholder {
+        color: transparent;
       }
-
-      input{
-          width: 100%;
-          border-radius: 5px;
-          border: none;
-          margin-left: 1%;
-          background-color: transparent;
-          outline: none;
-          color: @light;
-          font-size: 1.5rem;
-          transition: 0.4s ease;
-
-          &:focus::placeholder {
-              color: transparent;
-          }
-        }
-        
-        
+    }
   }
 
   .admin-features {
-      display: flex;
-      align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 8%;
+    margin-right: 1%;
+
+    .add-article {
+      border: 2px solid @light;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      padding: 3%;
+    }
   }
 }

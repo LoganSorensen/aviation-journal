@@ -3,7 +3,8 @@ import { Route } from "react-router-dom";
 
 import Header from "./components/header";
 import Login from "./components/login";
-import Article from "./components/article"
+import Article from "./components/article";
+import AddArticle from "./components/addArticle";
 
 import "./styles/index.css";
 
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/contact" />
       <Route exact path="/search" />
       <Route exact path="/inbox" />
+      <Route exact path="/add-article" component={AddArticle} />
       <Route exact path="/article/:id">
         <Article />
         </Route>

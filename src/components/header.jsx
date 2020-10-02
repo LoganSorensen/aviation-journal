@@ -23,19 +23,18 @@ const Header = () => {
     <div className="header">
       <div className="hamburger-and-logo">
         <i className="fas fa-bars" onClick={toggleOpen}></i>
-        {/* <p>Logo</p> */}
       </div>
       <form onSubmit={searchArticles}>
-      <i className="fas fa-search"></i>
+        <i className="fas fa-search"></i>
         <input
           type="text"
           placeholder="Search Articles"
           onChange={handleChange}
         />
       </form>
-      <div className='admin-features'>
-        <i className="far fa-envelope"></i>
-        <button>Add Article</button>
+      <div className="admin-features">
+        <Link to='/inbox'><i className="far fa-envelope"></i></Link>
+        <Link to="/add-article" className='add-article'>Add Article</Link>
       </div>
       <div className={`navigation ${toggleNav ? "open" : ""}`}>
         <nav>

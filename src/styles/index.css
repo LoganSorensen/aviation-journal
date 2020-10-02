@@ -138,6 +138,10 @@ html {
   align-items: center;
   justify-content: space-between;
   color: #eeeeee;
+  background-color: #212121;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .header .hamburger-and-logo {
   display: flex;
@@ -146,7 +150,10 @@ html {
 }
 .header i {
   font-size: 3rem;
-  cursor: pointer;
+}
+.header a {
+  text-decoration: none;
+  color: #eeeeee;
 }
 .header .navigation {
   position: fixed;
@@ -165,7 +172,6 @@ html {
   margin-top: 5%;
 }
 .header .navigation nav a {
-  text-decoration: none;
   font-size: 3rem;
   color: #212121;
   cursor: pointer;
@@ -199,6 +205,15 @@ html {
 .header .admin-features {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 8%;
+  margin-right: 1%;
+}
+.header .admin-features .add-article {
+  border: 2px solid #eeeeee;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 3%;
 }
 .login {
   margin: 7% auto 0;
@@ -254,4 +269,50 @@ html {
   font-size: 2rem;
   background-color: #0075ff;
   color: white;
+}
+.article-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 5% auto 0;
+  background-color: #eeeeee;
+  padding: 2%;
+}
+.article-form input,
+.article-form textarea {
+  margin: 2% 0;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 1%;
+}
+.article-form textarea {
+  resize: vertical;
+}
+.article-form .input-group button {
+  width: 15%;
+  padding: 1%;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.article-form .input-group input {
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+}
+.article-form .tag,
+.article-form .source {
+  display: flex;
+  align-items: center;
+  margin: 1% 0;
+  font-size: 1.3rem;
+}
+.article-form .create-btn {
+  width: 30%;
+  margin: 0 auto;
+  color: #eeeeee;
+  background-color: #0075ff;
+  border: none;
+  border-radius: 5px;
+  padding: 2%;
+  font-size: 2rem;
 }
