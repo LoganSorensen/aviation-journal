@@ -16,6 +16,7 @@ const Header = () => {
   };
 
   const toggleOpen = () => {
+    console.log('firing', toggleNav)
     setToggleNav(!toggleNav);
   };
 
@@ -38,8 +39,8 @@ const Header = () => {
       </div>
       <div className={`navigation ${toggleNav ? "open" : ""}`}>
         <nav>
-          <Link to="/">Categories</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/" onClick={toggleOpen}>Categories</Link>
+          <Link to="/contact" onClick={toggleOpen}>Contact</Link>
         </nav>
       </div>
     </div>
