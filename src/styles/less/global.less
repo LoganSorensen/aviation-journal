@@ -6,3 +6,17 @@ html {
   font-size: 62.5%;
   background-color: @dark;
 }
+
+.App {
+  // relative file path changes when compiled into css
+  /* ../images/man.jpg is the correct realtive path from this file, 
+  but since the styles are compiled into a css file one level up, the path 
+  needs to be changed to ./images/man.jpg
+  */
+  background-image: url(./images/man.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}

@@ -132,6 +132,18 @@ html {
   font-size: 62.5%;
   background-color: #212121;
 }
+.App {
+  /* ../images/man.jpg is the correct realtive path from this file, 
+  but since the styles are compiled into a css file one level up, the path 
+  needs to be changed to ./images/man.jpg
+  */
+  background-image: url(./images/man.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}
 .header {
   height: 5vh;
   display: flex;
@@ -150,6 +162,7 @@ html {
 }
 .header i {
   font-size: 3rem;
+  cursor: pointer;
 }
 .header a {
   text-decoration: none;
@@ -277,6 +290,7 @@ html {
   margin: 5% auto 0;
   background-color: #eeeeee;
   padding: 2%;
+  border-radius: 5px;
 }
 .article-form input,
 .article-form textarea {

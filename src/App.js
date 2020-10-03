@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import Header from "./components/header";
+import Home from "./components/home"
 import Login from "./components/login";
 import Article from "./components/article";
 import AddArticle from "./components/addArticle";
@@ -10,9 +11,9 @@ import "./styles/index.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Header />
-      <Route exact path="/" />
+      <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/contact" />
       <Route exact path="/search" />
