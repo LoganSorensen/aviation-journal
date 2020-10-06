@@ -19,7 +19,7 @@ function App() {
       <Route exact path="/contact" />
       <Route exact path="/search" />
       <Route exact path="/inbox" />
-      <Route exact path="/add-article" component={AddArticle} />
+      <PrivateRoute exact path="/add-article" component={AddArticle} />
       <Route exact path="/article/:id">
         <Article />
       </Route>

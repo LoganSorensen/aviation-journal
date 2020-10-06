@@ -16,11 +16,12 @@ const Login = (props) => {
     e.preventDefault();
     console.log(credentials);
     axios
-      .post("https://aviation-blog.herokuapp.com/api/auth/login", credentials)
-      .then(res => {
-        console.log(res)
-        localStorage.setItem('token', res.data.token)
-        // props.history.push("/");
+    .post("https://aviation-blog.herokuapp.com/api/auth/login", credentials)
+    .then(res => {
+      console.log(res)
+      localStorage.setItem('token', res.data.token)
+      props.history.push("/");
+      window.location.reload();
       })
       .catch((err) => {
         console.log(err);

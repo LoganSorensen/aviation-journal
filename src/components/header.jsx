@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [search, setSearch] = useState("");
   const [toggleNav, setToggleNav] = useState(false);
+  const [token, setToken] = useState(null);
+
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+  }, []);
 
   const searchArticles = (e) => {
     e.preventDefault();
@@ -19,6 +24,8 @@ const Header = () => {
     setToggleNav(!toggleNav);
   };
 
+  console.log(token);
+
   return (
     <div className="header">
       <div className="hamburger-and-logo">
@@ -33,13 +40,25 @@ const Header = () => {
         />
       </form>
       <div className="admin-features">
-        <Link to='/inbox'><i className="far fa-envelope"></i></Link>
-        <Link to="/add-article" className='add-article'>Add Article</Link>
+        {token !== null && (
+          <>
+            <Link to="/inbox">
+              <i className="far fa-envelope"></i>
+            </Link>
+            <Link to="/add-article" className="add-article">
+              Add Article
+            </Link>
+          </>
+        )}
       </div>
       <div className={`navigation ${toggleNav ? "open" : ""}`}>
         <nav>
-          <Link to="/" onClick={toggleOpen}>Categories</Link>
-          <Link to="/contact" onClick={toggleOpen}>Contact</Link>
+          <Link to="/" onClick={toggleOpen}>
+            Categories
+          </Link>
+          <Link to="/contact" onClick={toggleOpen}>
+            Contact
+          </Link>
         </nav>
       </div>
     </div>
