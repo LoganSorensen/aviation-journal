@@ -2,16 +2,17 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import Header from "./components/header";
-import Home from "./components/home"
+import Home from "./components/home";
 import Login from "./components/login";
 import Article from "./components/article";
 import AddArticle from "./components/addArticle";
+import PrivateRoute from "./components/PrivateRoute";
 
 import "./styles/index.css";
 
 function App() {
   return (
-    <div className="App" >
+    <div className="App">
       <Header />
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
@@ -21,7 +22,7 @@ function App() {
       <Route exact path="/add-article" component={AddArticle} />
       <Route exact path="/article/:id">
         <Article />
-        </Route>
+      </Route>
     </div>
   );
 }

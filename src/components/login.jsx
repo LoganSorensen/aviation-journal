@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({
@@ -14,7 +15,16 @@ const Login = (props) => {
   const login = (e) => {
     e.preventDefault();
     console.log(credentials);
-    props.history.push("/");
+    axios
+      .post("https://aviation-blog.herokuapp.com/api/auth/login", credentials)
+      .then(res => {
+        console.log(res)
+        localStorage.setItem('token', res.data.token)
+        // props.history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const toggleChecked = (e) => {

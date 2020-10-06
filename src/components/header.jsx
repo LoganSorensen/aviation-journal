@@ -16,7 +16,6 @@ const Header = () => {
   };
 
   const toggleOpen = () => {
-    console.log('firing', toggleNav)
     setToggleNav(!toggleNav);
   };
 
