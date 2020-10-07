@@ -5,7 +5,7 @@ const AddArticle = (props) => {
     title: "",
     author: "",
     date: "",
-    subject: "",
+    category: "",
     content: "",
     sources: [],
     tags: [],
@@ -68,12 +68,21 @@ const AddArticle = (props) => {
           name="author"
           onChange={handleChange}
         />
-        <input
-          type="text"
-          placeholder="Subject"
-          name="subject"
+        <select
+          name="category"
+          id="categories"
+          defaultValue="select"
           onChange={handleChange}
-        />
+        >
+          <option value="select" disabled>
+            Select a category
+          </option>
+          <option value="History">History</option>
+          <option value="Future of Flight">Future of Flight</option>
+          <option value="Interviews">Interviews</option>
+          <option value="Unique Aircraft">Unique Aircraft</option>
+          <option value="Science">Science</option>
+        </select>
         <textarea
           placeholder="Content"
           name="content"

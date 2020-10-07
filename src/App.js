@@ -1,11 +1,13 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Header from "./components/header";
 import Home from "./components/home";
 import Login from "./components/login";
 import Article from "./components/article";
 import AddArticle from "./components/addArticle";
+import ContactForm from './components/contactForm';
+
 import PrivateRoute from "./components/PrivateRoute";
 
 import "./styles/index.css";
@@ -14,15 +16,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Route exact path="/" component={Home} />
+      <Switch>
       <Route exact path="/login" component={Login} />
-      <Route exact path="/contact" />
+      <Route exact path="/contact" component={ContactForm} />
       <Route exact path="/search" />
-      <Route exact path="/inbox" />
+      {/* <PrivateRoute exact path="/inbox" /> */}
       <PrivateRoute exact path="/add-article" component={AddArticle} />
       <Route exact path="/article/:id">
         <Article />
       </Route>
+      <Route path="/" component={Home} />
+      </Switch>
     </div>
   );
 }

@@ -16,7 +16,6 @@ const Header = () => {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setSearch(e.target.value);
   };
 
@@ -24,7 +23,10 @@ const Header = () => {
     setToggleNav(!toggleNav);
   };
 
-  console.log(token);
+  const logout = () => {
+    localStorage.removeItem('token')
+    window.location.reload();
+  }
 
   return (
     <div className="header">
@@ -45,9 +47,10 @@ const Header = () => {
             <Link to="/inbox">
               <i className="far fa-envelope"></i>
             </Link>
-            <Link to="/add-article" className="add-article">
+            <Link to="/add-article" className="admin-btn">
               Add Article
             </Link>
+            <button className="logout admin-btn" onClick={logout}>Log Out</button>
           </>
         )}
       </div>
