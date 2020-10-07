@@ -131,8 +131,6 @@ table {
 html {
   font-size: 62.5%;
   background-color: #212121;
-}
-.App {
   /* ../images/man.jpg is the correct realtive path from this file, 
   but since the styles are compiled into a css file one level up, the path 
   needs to be changed to ./images/man.jpg
@@ -143,6 +141,7 @@ html {
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
+  scroll-behavior: smooth;
 }
 .header {
   height: 5vh;
@@ -193,10 +192,12 @@ html {
   left: 0;
 }
 .header form {
-  width: 40%;
+  width: 45%;
   display: flex;
   border-bottom: 1px solid #eeeeee;
+  margin-left: 27%;
   padding: 0.2% 0;
+  position: absolute;
 }
 .header form i {
   font-size: 1.8rem;
@@ -329,4 +330,52 @@ html {
   border-radius: 5px;
   padding: 2%;
   font-size: 2rem;
+}
+.image-window {
+  background-color: rgba(33, 33, 33, 0.4);
+  height: 95vh;
+  color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.image-window h1 {
+  font-size: 9rem;
+}
+.image-window .cta {
+  font-size: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.image-window .cta a {
+  text-decoration: none;
+  color: #eeeeee;
+}
+.transition {
+  height: 20vh;
+  background-image: linear-gradient(to bottom, rgba(33, 33, 33, 0.4), rgba(33, 33, 33, 0.8));
+}
+.lower-content {
+  background-color: rgba(33, 33, 33, 0.8);
+}
+.featured-article {
+  width: 45%;
+  background-color: #eeeeee;
+  border-radius: 5px;
+  margin: 0 auto 8%;
+  height: 80vh;
+  opacity: 1;
+}
+.featured-articles {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 5%;
+}
+.featured-articles .article {
+  width: 30%;
+  background-color: #eeeeee;
+  height: 50vh;
+  border-radius: 5px;
 }
