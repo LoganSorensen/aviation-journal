@@ -60,7 +60,7 @@ const Inbox = () => {
     checkboxes.forEach((checkbox) => (checkbox.checked = false));
   };
 
-  console.log(" messages", messages);
+  console.log(" messages", selectedMessage);
 
   return (
     <div className="inbox">
