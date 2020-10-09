@@ -1,0 +1,38 @@
+.contact-form {
+  background-color: @light;
+  width: 50%;
+  margin: 10% auto 0;
+  padding: 2%;
+  border-radius: 5px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea {
+      margin: 2% 0;
+      border-radius: 5px;
+      border: 1px solid gray;
+      padding: 1%;
+    }
+
+    textarea {
+      height: 30vh;
+      resize: vertical;
+      //   resize: none;
+      //   overflow-y: scroll;
+    }
+
+    button {
+      width: 30%;
+      margin: 0 auto;
+      color: @light;
+      background-color: @blue;
+      border: none;
+      border-radius: 5px;
+      padding: 2%;
+      font-size: 2rem;
+    }
+  }
+}

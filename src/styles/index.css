@@ -232,6 +232,9 @@ html {
   background-color: #212121;
   cursor: pointer;
 }
+.header .admin-features .add-btn {
+  padding: 3% 2.5%;
+}
 .login {
   margin: 7% auto 0;
   width: 30%;
@@ -356,6 +359,11 @@ html {
 .image-window .cta a {
   text-decoration: none;
   color: #eeeeee;
+  transition: 0.3s ease;
+  margin-top: 3%;
+}
+.image-window .cta a:hover {
+  transform: translate(0, 5px);
 }
 .transition {
   height: 20vh;
@@ -363,6 +371,7 @@ html {
 }
 .lower-content {
   background-color: rgba(33, 33, 33, 0.8);
+  padding-top: 5%;
 }
 .featured-article {
   width: 45%;
@@ -382,4 +391,36 @@ html {
   background-color: #eeeeee;
   height: 50vh;
   border-radius: 5px;
+}
+.contact-form {
+  background-color: #eeeeee;
+  width: 50%;
+  margin: 10% auto 0;
+  padding: 2%;
+  border-radius: 5px;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form form input,
+.contact-form form textarea {
+  margin: 2% 0;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 1%;
+}
+.contact-form form textarea {
+  height: 30vh;
+  resize: vertical;
+}
+.contact-form form button {
+  width: 30%;
+  margin: 0 auto;
+  color: #eeeeee;
+  background-color: #0075ff;
+  border: none;
+  border-radius: 5px;
+  padding: 2%;
+  font-size: 2rem;
 }

@@ -47,7 +47,7 @@ const Header = () => {
             <Link to="/inbox">
               <i className="far fa-envelope"></i>
             </Link>
-            <Link to="/add-article" className="admin-btn">
+            <Link to="/add-article" className="admin-btn add-btn">
               Add Article
             </Link>
             <button className="logout admin-btn" onClick={logout}>Log Out</button>
