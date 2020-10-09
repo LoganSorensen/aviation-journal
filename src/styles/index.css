@@ -424,3 +424,61 @@ html {
   padding: 2%;
   font-size: 2rem;
 }
+.inbox {
+  width: 80%;
+  height: 60vh;
+  margin: 10% auto 0;
+  border-radius: 5px;
+  background-color: #eeeeee;
+  display: flex;
+}
+.inbox .messages {
+  width: 25%;
+  overflow-y: scroll;
+}
+.inbox .messages .toolbar {
+  border-bottom: 1px solid gray;
+  background-color: #eeeeee;
+  padding: 4%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.inbox .messages .toolbar button {
+  cursor: pointer;
+}
+.inbox .messages .message {
+  border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+}
+.inbox .messages .content {
+  width: 100%;
+  padding: 3% 2% 3% 5%;
+  cursor: pointer;
+}
+.inbox .messages .name {
+  font-size: 1.4rem;
+}
+.inbox .messages input {
+  transform: scale(1.2);
+  margin-left: 5%;
+  cursor: pointer;
+}
+.inbox .message-window {
+  width: 75%;
+  border-left: 1px solid gray;
+}
+.inbox .no-messages {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inbox .no-messages i {
+  font-size: 6rem;
+}
+.inbox .no-messages p {
+  font-size: 3rem;
+}

@@ -1,0 +1,69 @@
+.inbox {
+  width: 80%;
+  height: 60vh;
+  margin: 10% auto 0;
+  border-radius: 5px;
+  background-color: @light;
+  display: flex;
+
+  .messages {
+    width: 25%;
+    overflow-y: scroll;
+
+    .toolbar {
+      border-bottom: 1px solid gray;
+      background-color: @light;
+      padding: 4%;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+
+      button {
+        cursor: pointer;
+      }
+    }
+
+    .message {
+      border-bottom: 1px solid gray;
+      display: flex;
+      align-items: center;
+    }
+
+    .content {
+      width: 100%;
+      padding: 3% 2% 3% 5%;
+      cursor: pointer;
+    }
+
+    .name {
+      font-size: 1.4rem;
+    }
+
+    input {
+      transform: scale(1.2);
+      margin-left: 5%;
+      cursor: pointer;
+    }
+  }
+
+  .message-window {
+    width: 75%;
+    border-left: 1px solid gray;
+  }
+
+  .no-messages {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 6rem;
+    }
+
+    p {
+      font-size: 3rem;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const ContactForm = () => {
   const [contactInfo, setContactInfo] = useState({
@@ -13,7 +14,15 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(contactInfo);
+    axios
+      .post("http://localhost:5000/api/messages", contactInfo)
+      .then((res) => {
+        console.log(res);
+        setContactInfo({ name: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -23,6 +32,7 @@ const ContactForm = () => {
           type="text"
           name="name"
           placeholder="Name"
+          value={contactInfo.name}
           onChange={handleChange}
           required
         />
@@ -30,12 +40,14 @@ const ContactForm = () => {
           type="email"
           name="email"
           placeholder="Email"
+          value={contactInfo.email}
           onChange={handleChange}
           required
         />
         <textarea
           name="message"
           placeholder="Message"
+          value={contactInfo.message}
           onChange={handleChange}
           required
         ></textarea>
