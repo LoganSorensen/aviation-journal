@@ -57,7 +57,7 @@ const Header = () => {
       <div className={`navigation ${toggleNav ? "open" : ""}`}>
         <nav>
           <Link to="/" onClick={toggleOpen}>
-            Categories
+            Home
           </Link>
           <Link to="/contact" onClick={toggleOpen}>
             Contact

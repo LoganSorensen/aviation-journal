@@ -1,7 +1,7 @@
 .inbox {
-  width: 80%;
-  height: 60vh;
-  margin: 10% auto 0;
+  width: 70%;
+  height: 65vh;
+  margin: 8% auto 0;
   border-radius: 5px;
   background-color: @light;
   display: flex;
@@ -13,20 +13,43 @@
     .toolbar {
       border-bottom: 1px solid gray;
       background-color: @light;
-      padding: 4%;
+      padding: 4% 4%;
       position: sticky;
       top: 0;
       z-index: 2;
 
       button {
         cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        margin: 0 2%;
+        width: 40px;
+        height: 40px;
+        transition: 0.3s ease;
+        
+        &:hover {
+            background-color: #d4d4d4;
+        }
       }
+
+      i {
+          font-size: 2rem;
+      }
+    }
+
+    .selected {
+      background-color: #d4d4d4;
     }
 
     .message {
       border-bottom: 1px solid gray;
       display: flex;
       align-items: center;
+      &:hover {
+        box-shadow: 1px 0 0 #dadce0, -1px 0 0 #dadce0,
+          0 1px 2px 0 rgba(60, 64, 67, 0.3),
+          0 1px 3px 1px rgba(60, 64, 67, 0.15);
+      }
     }
 
     .content {
@@ -36,7 +59,11 @@
     }
 
     .name {
-      font-size: 1.4rem;
+      font-size: 1.7rem;
+    }
+
+    .message-text {
+      font-size: 1.3rem;
     }
 
     input {
@@ -49,6 +76,24 @@
   .message-window {
     width: 75%;
     border-left: 1px solid gray;
+
+    .message-field {
+      font-size: 2rem;
+      padding: 1%;
+    }
+
+    .message-text {
+      overflow-y: scroll;
+      height: 93%;
+    }
+
+    .from {
+      border-bottom: 1px solid gray;
+
+      span {
+        font-weight: bold;
+      }
+    }
   }
 
   .no-messages {

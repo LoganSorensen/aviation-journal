@@ -15,7 +15,6 @@ const Inbox = () => {
     axiosWithAuth()
       .get("http://localhost:5000/api/messages")
       .then((res) => {
-        console.log("run");
         setMessages(res.data);
       })
       .catch((err) => {
@@ -23,9 +22,14 @@ const Inbox = () => {
       });
   };
 
-  const selectMessage = (message) => {
-    console.log("selected");
+  const selectMessage = (message, index) => {
     setSelectedMessage(message);
+
+    const messages = document.querySelectorAll(".message");
+
+    messages.forEach((message) => message.classList.remove("selected"));
+
+    messages[index].classList.add("selected");
   };
 
   const checkMessage = (id) => {
@@ -60,7 +64,10 @@ const Inbox = () => {
     checkboxes.forEach((checkbox) => (checkbox.checked = false));
   };
 
-  console.log(" messages", selectedMessage);
+  const truncateStr = (str) => {
+    const length = 45;
+    return str.length > length ? str.substr(0, length - 1) + "..." : str;
+  };
 
   return (
     <div className="inbox">
@@ -87,16 +94,31 @@ const Inbox = () => {
                         />
                         <div
                           className="content"
-                          onClick={() => selectMessage(message)}
+                          onClick={() => selectMessage(message, index)}
                         >
                           <p className="name">{message.name}</p>
-                          <p>{message.message}</p>
+                          <p className="message-text">
+                            {truncateStr(message.message)}
+                          </p>
                         </div>
                       </div>
                     );
                   })}
               </div>
-              <div className="message-window"></div>
+              <div className="message-window">
+                {selectedMessage && (
+                  <>
+                    <div className="message-field from">
+                      <span>{selectedMessage.name}</span> &lt;
+                      {selectedMessage.email}
+                      &gt;
+                    </div>
+                    <div className="message-field message-text">
+                      {selectedMessage.message}
+                    </div>
+                  </>
+                )}
+              </div>
             </>
           ) : (
             <div className="no-messages">
