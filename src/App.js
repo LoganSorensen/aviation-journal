@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./components/header";
 import Home from "./components/home";
 import Login from "./components/login";
+import ArticlesPage from './components/articlesPage'
 import Article from "./components/article";
 import AddArticle from "./components/addArticle";
 import ContactForm from "./components/contactForm";
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/contact" component={ContactForm} />
         <Route exact path="/search" />
         <PrivateRoute exact path="/inbox" component={Inbox} />
+        <Route exact path='/articles' component={ArticlesPage} />
         <PrivateRoute exact path="/add-article" component={AddArticle} />
         <Route exact path="/article/:id">
           <Article />

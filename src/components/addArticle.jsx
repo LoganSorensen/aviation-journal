@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const AddArticle = (props) => {
   const [article, setArticle] = useState({
@@ -9,7 +12,20 @@ const AddArticle = (props) => {
     content: "",
     sources: [],
     tags: [],
+    reference_id: "",
   });
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/articles")
+      .then((res) => {
+        const newArticleId = res.data[res.data.length - 1].id + 1;
+        setArticle({ ...article, reference_id: newArticleId });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const handleChange = (e) => {
     setArticle({ ...article, [e.target.name]: e.target.value });
@@ -47,11 +63,28 @@ const AddArticle = (props) => {
     setArticle({ ...article, tags: tags });
   };
 
+  const getDate = () => {
+    let today = new Date();
+    let day = today.getDate();
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+    return `${month}/${day}/${year}`;
+  };
+
   const createArticle = (e) => {
     e.preventDefault();
-    console.log(article);
-    // props.history.push('/')
-  };
+    setArticle({...article, date: getDate()})
+    axiosWithAuth()
+      .post("http://localhost:5000/api/articles", article)
+      .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+          });
+        // props.history.push('/')
+      };
+      // console.log(props);
 
   return (
     <div>

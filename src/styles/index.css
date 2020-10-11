@@ -308,6 +308,7 @@ html {
   padding: 1%;
 }
 .article-form textarea {
+  min-height: 30vh;
   resize: vertical;
 }
 .article-form .input-group button {
@@ -395,7 +396,7 @@ html {
 .contact-form {
   background-color: #eeeeee;
   width: 50%;
-  margin: 10% auto 0;
+  margin: 8% auto 0;
   padding: 2%;
   border-radius: 5px;
 }
@@ -412,7 +413,8 @@ html {
 }
 .contact-form form textarea {
   height: 30vh;
-  resize: vertical;
+  resize: none;
+  overflow-y: scroll;
 }
 .contact-form form button {
   width: 30%;

@@ -59,6 +59,9 @@ const Header = () => {
           <Link to="/" onClick={toggleOpen}>
             Home
           </Link>
+          <Link to="/articles" onClick={toggleOpen}>
+            Articles
+          </Link>
           <Link to="/contact" onClick={toggleOpen}>
             Contact
           </Link>
