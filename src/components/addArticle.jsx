@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+
 
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
@@ -12,20 +12,7 @@ const AddArticle = (props) => {
     content: "",
     sources: [],
     tags: [],
-    reference_id: "",
   });
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/articles")
-      .then((res) => {
-        const newArticleId = res.data[res.data.length - 1].id + 1;
-        setArticle({ ...article, reference_id: newArticleId });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
   const handleChange = (e) => {
     setArticle({ ...article, [e.target.name]: e.target.value });
